@@ -12,3 +12,17 @@ I need this code, but don't know where, perhaps should make some middleware, don
 
 Pull your server into this file and start it!
 */
+const server = require('./api/server');
+const dotenv = require("dotenv").config();
+const port = process.env.PORT || 5000
+
+const message = `Server running on port: ${port}`;
+
+server.listen(port, ()=>{
+    console.log(message)
+})
+
+console.log("It's ALIVE!")
+console.log(process.env.USER)
+console.log(process.env.PORT)
+
